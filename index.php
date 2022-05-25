@@ -69,7 +69,7 @@ $router->post('/', function() {
   }
 
   $image_url = $image_data['imageUrl'];
-  $image_name = './temp_files/' . pathinfo($image_url)['basename'];
+  $image_name = pathinfo($image_url)['basename'];
 
   //Check file size and type, if everything is OK, download it.
   if(!check_file_ok($image_url)){
