@@ -69,7 +69,8 @@ $router->post('/', function() {
   }
 
   $image_url = $image_data['imageUrl'];
-  $image_name = pathinfo($image_url)['basename'];
+  $img = file_get_contents($image_url);
+  $image_name = pathinfo($img)['basename'];
 
   //Check file size and type, if everything is OK, download it.
   if(!check_file_ok($image_url)){
